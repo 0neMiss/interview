@@ -1,0 +1,8 @@
+.page .wrapper {
+  display: flex;
+  grid-gap: 3rem;
+}
+
+.page .wrapper div {
+  border: 1px solid #000;
+}
