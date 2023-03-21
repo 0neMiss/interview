@@ -1,10 +1,32 @@
 import { useState } from "react";
 import "./page.css";
 
+/**
+ *
+ * Scenario:
+ *
+ * A jr. developer on your team submitted the following code for review. Take
+ * time to review their code and offer suggestions for improvement. Key areas
+ * to focus on are: the react lifecycle, performance, readability, and
+ * hardening an application that works with a dynamic CMS.
+ *
+ * The jr. developer was tasked with creating the following feature:
+ *
+ * Build a page that meets the following criteria:
+ * - Renders the current time, updated every half second
+ * - Renders a list of row data that is recieved from a CMS
+ * - Poll the CMS endpoint to fetch the latest data every 10 seconds
+ *
+ */
+
 interface DisplayData {
   type: string;
   title: string;
   description: string;
+}
+
+interface RowProps {
+  data: DisplayData;
 }
 
 interface Props {
@@ -12,12 +34,8 @@ interface Props {
   initialData: DisplayData[];
 }
 
-interface RowProps {
-  data: DisplayData;
-}
-
 const mockApiCall = async () => {
-  // Pretend this was returned from some API
+  // Pretend this data was returned from an API
   const data: DisplayData[] = await fetch("/data.json").then((res) =>
     res.json()
   );
