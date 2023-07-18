@@ -16,10 +16,14 @@ import { Video } from "./interfaces";
  * - Calls videos api endpoint to fetch video items
  * - Renders a list of VideoCards with the data returned from the api
  * - Layout matches the design provided
+ * - Every 5 minutes check and see if we have new content to display, and only re-render the page if we do.
+ * - Only check for new content if the user remains on this page.
+ * Stretch goals
+ * - write a unit test with jest for your component(s) 
  *
  */
 
-interface VideoProps {}
+interface VideoProps { }
 
 const VideoCard: React.FC<VideoProps> = (props) => {
   return (
